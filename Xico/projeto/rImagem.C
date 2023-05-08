@@ -17,33 +17,9 @@ DAR RESHAPE DA MATRIZ
 */
 
 vector<int> line_2_vector(string line);
+vector<vector<int>> reshape(vector<vector<int>> originalVec, int m);
+vector<int> line_2_vector(string line);
 
-vector<vector<int>> reshape(vector<vector<int>> originalVec, int m){
-    vector<int> line;
-    vector<vector<int>> vec;
-    int counter = 0;
-
-
-    for(vector<int> vi : originalVec){
-        for(int i: vi){
-            if(counter < m){
-                line.push_back(i);
-                counter+=1;
-            }else{
-                counter = 0;
-                vec.push_back(line);
-                line.clear();
-                line.push_back(i);
-            }
-        }
-    }
-    
-    if(!line.empty()){
-        vec.push_back(line);
-    }
-    
-    return vec;
-}
 
 
 int main()
@@ -94,6 +70,33 @@ int main()
         return -1;
     }
 
+}
+
+vector<vector<int>> reshape(vector<vector<int>> originalVec, int m){
+    vector<int> line;
+    vector<vector<int>> vec;
+    int counter = 0;
+
+
+    for(vector<int> vi : originalVec){
+        for(int i: vi){
+            if(counter < m){
+                line.push_back(i);
+                counter+=1;
+            }else{
+                counter = 0;
+                vec.push_back(line);
+                line.clear();
+                line.push_back(i);
+            }
+        }
+    }
+    
+    if(!line.empty()){
+        vec.push_back(line);
+    }
+
+    return vec;
 }
 
 vector<int> line_2_vector(string line){

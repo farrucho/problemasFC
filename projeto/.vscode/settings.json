@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "index.C": "cpp",
+        "rImagem.C": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "sstream": "cpp"
+    }
+}

@@ -65,10 +65,4 @@ int main()
         return -1;
     }
 
-    /*string a ="12 34 56";
-    vector<int> v = line_2_vector(a);
-
-    for(int i = 0; i < v.size(); i++){
-        cout << v[i] << endl;
-    }*/
 }

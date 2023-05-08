@@ -30,7 +30,7 @@ int main()
 
         getline(FI, line);//dar skip da primeira linha pois nao interessa e não é int para nao complicar
         getline(FI, line);//dar skip da segunda
-        getline(FI, line);//dar skip da segunda
+        getline(FI, line);//dar skip da terceira
 
         while(getline(FI, line)){ //enquanto nao chega ao final do ficheiro
             imagemVec.push_back(line_2_vector(line));

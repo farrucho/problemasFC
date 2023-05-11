@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include "Var_Med.h"
 using namespace std;
 
 // Função que me dá o total de elementos para não repetir código 
@@ -15,6 +16,7 @@ int total(vector<vector<int>> V)
             total +=1;
         }
     }
+    return total;
 
 }
 
@@ -30,6 +32,7 @@ int soma (vector<vector<int>> V)
             sum += V[i][j];
         }
     }
+    return sum;
 }
 // Média 
 

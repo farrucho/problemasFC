@@ -34,10 +34,13 @@ vector <double> f_rel(vector<int> V)
     }
 
     vector <double> V_fr;
-    for (int j = 0; j < V.size(); j++)
-    {
-        V_fr.push_back((V[j]/sum)*100);
+    double elem = 0;
+
+    for(int j = 0; j < V.size(); j++){
+        elem = (double) V[j]/sum*100;
+        V_fr.push_back(elem);
     }
+    return V_fr;
 
 }
 

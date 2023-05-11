@@ -28,7 +28,7 @@ vector<int> f_abs (vector<vector<int>> V, int N)
 vector <double> f_rel(vector<int> V)
 {
     int sum = 0;
-    for (int i; i < V.size(); i++)
+    for (int i = 0; i < V.size(); i++)
     {
         sum += V[i];
     }

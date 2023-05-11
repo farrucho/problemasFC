@@ -12,9 +12,10 @@ void ReadImage(string filename, vector<vector<int>>& M);
 
 int main(){
     try{
-        ReadImage("glassware_noisy.ascii.pgm");
+        vector<vector <int>> originalMatrix = ReadImage("glassware_noisy.ascii.pgm");
     }catch(...){
         cout << "Erro ao abrir ficheiro";
+        return -1;
     }
 
 
@@ -57,6 +58,7 @@ vector<vector<int>> ReadImage(string filename){
             }
             j+=1;
         }
+        FI.close();
     }else{
         throw 505;
     }

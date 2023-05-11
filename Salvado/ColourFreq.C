@@ -34,7 +34,7 @@ vector <double> f_rel(vector<int> V)
     }
 
     vector <double> V_fr;
-    for (int j; j < V.size(); j++)
+    for (int j = 0; j < V.size(); j++)
     {
         V_fr.push_back((V[j]/sum)*100);
     }

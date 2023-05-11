@@ -59,12 +59,11 @@ vector<vector<int>> ReadImage(string filename){
             j+=1;
         }
         FI.close();
+        return matriz;
     }else{
         throw 505;
     }
     
-
-    return {{1,1}};
 }
 
 void ReadImage(string filename, vector<vector<int>>& M){

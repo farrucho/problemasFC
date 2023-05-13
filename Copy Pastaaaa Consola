@@ -1,0 +1,6 @@
+Homework 1:
+
+g++ -std=c++17 rImagem.C ReadImage.C algoFiltro.C ColourFreq.C invertImage.C open_writeFile.C Var_Med.C -o rImagem.exe
+
+./rImagem.exe
+

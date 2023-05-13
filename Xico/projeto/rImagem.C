@@ -6,66 +6,39 @@
 
 using namespace std;
 
+#include "ReadImage.h"
+#include "ColourFreq.h"
 
-vector<vector<int>> ReadImage(string filename);
-void ReadImage(string filename, vector<vector<int>>& M);
 
 int main(){
+    vector<vector <int>> mxOrig;
     try{
-        vector<vector <int>> originalMatrix = ReadImage("glassware_noisy.ascii.pgm");
+        mxOrig = ReadImage("glassware_noisy.ascii.pgm");
     }catch(...){
         cout << "Erro ao abrir ficheiro";
         return -1;
     }
+    // Trocar pelo numero das cores, por agora vou criar manualmente:
+    vector<int> ColourFreq(256);
+    f_abs(mxOrig, 255, ColourFreq);
+    vector<double> ColourRelFreq;
+    f_rel(ColourFreq, 320, 428, ColourRelFreq);
+    /*
+    cout << "Tabela freq abs:" << endl;
+    for (auto x: ColourFreq) {
+        cout << x << endl;
+    }
+
+    cout << "Tabela freq rel:" << endl;
+    for (auto y: ColourRelFreq) {
+        cout << y << endl;
+    }
+    */
+    
+
 
 
     return 0;
 }
 
-vector<vector<int>> ReadImage(string filename){
-    ifstream FI(filename);
-
-    if(FI.is_open()){
-        cout << "Ficheiro aberto" << endl;
-        
-        string line;
-
-        int lines;
-        int columns;
-        string testStr;
-        int testInt;
-
-        FI >> testStr;
-        FI >> columns >> lines;
-        
-        vector<vector<int>> matriz(lines,vector<int> (columns,0)); // inicializado a zeros
-
-        FI >> testInt; // 255 linha 2
-
-        int j = 0;
-        int currentLineIndex = 0;
-        vector<int> lineVector;
-        while(j < lines*columns){
-            int elem = 0;
-            FI >> elem;
-            if((j+1)%(columns) == 0 && j != 0){ // se chegou ao final da linha
-                lineVector.push_back(elem);
-                matriz[currentLineIndex] = lineVector;
-                lineVector.clear();
-                currentLineIndex+=1;
-            }else{
-                lineVector.push_back(elem);
-            }
-            j+=1;
-        }
-        FI.close();
-        return matriz;
-    }else{
-        throw 505;
-    }
-    
-}
-
-void ReadImage(string filename, vector<vector<int>>& M){
-    M = ReadImage(filename);
-}
+//meter link para imgur
